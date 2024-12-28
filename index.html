@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عطاری گلریز</title>
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #8bc34a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            position: relative;
+            background-color: #4caf50;
+            padding: 10px 0;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+        .banner {
+            background-image: url('herbal-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .content {
+            padding: 20px;
+        }
+        .categories, .products, .blog {
+            margin: 20px 0;
+        }
+        .category {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: white;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            cursor: pointer;
+        }
+        .category:hover {
+            background-color: #e8f5e9;
+            transform: scale(1.05);
+        }
+        .category a {
+            text-decoration: none;
+            color: #333;
+        }
+        .product, .article {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: white;
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            float: right;
+        }
+        .product::before, .article::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+        }
+        .contact {
+            padding: 20px;
+            background-color: #f1f8e9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form label {
+            margin-bottom: 10px;
+        }
+        .contact form input, .contact form textarea, .contact form button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .contact form button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact form button:hover {
+            background-color: #43a047;
+        }
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #4caf50;
+                position: absolute;
+                top: 50px;
+                width: 100%;
+                z-index: 1000;
+                padding: 10px 0;
+            }
+            .nav-links a {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .product, .article {
+                width: 100%;
+            }
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font/dist/font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <h1>عطاری گلریز</h1>
+        <p>سلامتی از طبیعت</p>
+    </header>
+
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a href="#">صفحه اصلی</a>
+            <a href="#products">محصولات</a>
+            <a href="#blog">وبلاگ</a>
+            <a href="#about">درباره ما</a>
+            <a href="#contact">تماس با ما</a>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <p>گیاهان دارویی و محصولات طبیعی برای سلامتی شما</p>
+    </section>
+
+    <div class="content">
+        <section class="categories">
+            <h2>دسته‌بندی‌های اصلی</h2>
+            <div class="category"><a href="#">عرقیات گیاهی</a></div>
+            <div class="category"><a href="#">دمنوش‌ها</a></div>
+            <div class="category"><a href="#">ادویه‌جات</a></div>
+            <div class="category"><a href="#">روغن‌های طبیعی</a></div>
+            <div class="category"><a href="#">محصولات آرایشی و بهداشتی</a></div>
+        </section>
+
+        <section class="products" id="products">
+            <h2>محصولات</h2>
+            <div class="product">محصول 1: توضیحات و قیمت</div>
+            <div class="product">محصول 2: توضیحات و قیمت</div>
+            <div class="product">محصول 3: توضیحات و قیمت</div>
+            <div class="product">محصول 4: توضیحات و قیمت</div>
+        </section>
+
+        <section class="blog" id="blog">
+            <h2>وبلاگ</h2>
+            <div class="article">مقاله 1: فواید دمنوش زنجبیل</div>
+            <div class="article">مقاله 2: روش‌های استفاده از روغن‌های طبیعی</div>
+            <div class="article">مقاله 3: اهمیت تغذیه طبیعی</div>
+            <div class="article">مقاله 4: روش‌های مراقبت از پوست</div>
+        </section>
+
+        <section class="about" id="about">
+            <h2>درباره ما</h2>
+            <p>ما در عطاری گلریز، محصولات طبیعی و ارگانیک را برای سلامتی شما فراهم می‌کنیم. با سال‌ها تجربه و تعهد به کیفیت، هدف ما ارائه بهترین خدمات به مشتریان است.</p>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>تماس با ما</h2>
+            <form>
+                <label>نام:<br><input type="text" name="name"></label><br>
+                <label>ایمیل:<br><input type="email" name="email"></label><br>
+                <label>پیام:<br><textarea name="message"></textarea></label><br>
+                <button type="submit">ارسال</button>
+            </form>
+            <p>ایمیل: info@atari.com | تلفن: 0123456789</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 عطاری گلریز. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
