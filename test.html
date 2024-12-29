@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عطاری گلریز</title>
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #8bc34a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            position: relative;
+            background-color: #4caf50;
+            padding: 10px 0;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+        .banner {
+            background-image: url('herbal-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .content {
+            padding: 20px;
+        }
+        .categories, .products, .blog {
+            margin: 20px 0;
+        }
+        .category {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: white;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            cursor: pointer;
+        }
+        .category:hover {
+            background-color: #e8f5e9;
+            transform: scale(1.05);
+        }
+        .category a {
+            text-decoration: none;
+            color: #333;
+        }
+        .product, .article {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: white;
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            float: right;
+            text-align: center; /* Center the text */
+        }
+        
+        /* Styles for product image */
+        .product img {
+            width: 100%; /* Make the image take the full width of the product container */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for product title and description */
+        .product h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .contact {
+            padding: 20px;
+            background-color: #f1f8e9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form label {
+            margin-bottom: 10px;
+        }
+        .contact form input, .contact form textarea, .contact form button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .contact form button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact form button:hover {
+            background-color: #43a047;
+        }
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Fixed menu at the bottom */
+        .fixed-menu {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .fixed-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #4caf50;
+                position: absolute;
+                top: 50px;
+                width: 100%;
+                z-index: 1000;
+                padding: 10px 0;
+            }
+            .nav-links a {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .product, .article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>عطاری گلریز</h1>
+        <p>سلامتی از طبیعت</p>
+    </header>
+
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a href="#">صفحه اصلی</a>
+            <a href="#products">محصولات</a>
+            <a href="#blog">وبلاگ</a>
+            <a href="#about">درباره ما</a>
+            <a href="#contact">تماس با ما</a>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <p>گیاهان دارویی و محصولات طبیعی برای سلامتی شما</p>
+    </section>
+
+    <div class="content">
+        <section class="categories">
+            <h2>دسته‌بندی‌های اصلی</h2>
+            <div class="category"><a href="#">عرقیات گیاهی</a></div>
+            <div class="category"><a href="#">دمنوش‌ها</a></div>
+            <div class="category"><a href="#">ادویه‌جات</a></div>
+            <div class="category"><a href="#">روغن‌های طبیعی</a></div>
+            <div class="category"><a href="#">محصولات آرایشی و بهداشتی</a></div>
+        </section>
+
+        <section class="products" id="products">
+            <h2>محصولات</h2>
+            <div class="product">
+                <img src="IMG_20241217_174802_429.jpg" alt="محصول 1">
+                <h3>محصول 1</h3>
+                <p>توضیحات محصول 1</p>
+                <button onclick="addToCart('محصول 1')">افزودن به سبد خرید</button>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="محصول 2">
+                <h3>محصول 2</h3>
+                <p>توضیحات محصول 2</p>
+                <button onclick="addToCart('محصول 2')">افزودن به سبد خرید</button>
+            </div>
+        </section>
+
+        <section class="blog" id="blog">
+            <h2>وبلاگ</h2>
+            <div class="article">
+                <img src="blog1.jpg" alt="مقاله 1">
+                <h3>مقاله 1</h3>
+                <p>توضیحات مقاله 1</p>
+            </div>
+            <div class="article">
+                <img src="blog2.jpg" alt="مقاله 2">
+                <h3>مقاله 2</h3>
+                <p>توضیحات مقاله 2</p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>تماس با ما</h2>
+            <form>
+                <label for="name">نام شما:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">ایمیل شما:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="message">پیام شما:</label>
+                <textarea id="message" name="message"></textarea>
+
+                <button type="submit">ارسال پیام</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 عطاری گلریز. تمامی حقوق محفوظ است.</p>
+        </footer>
+
+        <div class="fixed-menu">
+            <a href="#">سبد خرید (0)</a>
+        </div>
+    </div>
+
+    <script>
+        var cart = [];
+
+        function addToCart(productName) {
+            cart.push(productName);
+            updateCart();
+        }
+
+        function updateCart() {
+            var cartCount = cart.length;
+            document.querySelector('.fixed-menu a').textContent = "سبد خرید (" + cartCount + ")";
+        }
+
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
